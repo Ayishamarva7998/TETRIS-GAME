@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tetris/pixels.dart';
+import 'package:tetris/screens/pixels.dart';
 
 class GameBoard extends StatefulWidget {
   const GameBoard({super.key});
