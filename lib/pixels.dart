@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Pixels extends StatelessWidget {
-  const Pixels({super.key});
+  var color;
+  var child;
+   Pixels({super.key, required this.color , required this.child});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return  Container(
+      decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(4)),
+      margin: EdgeInsets.all(1),
+      child: Center(child: Text(child.toString(),style: TextStyle(color: Colors.white),),),
+    );
   }
 }

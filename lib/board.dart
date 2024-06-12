@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tetris/pixels.dart';
 
 class GameBoard extends StatefulWidget {
   const GameBoard({super.key});
@@ -21,10 +22,7 @@ class _GameBoardState extends State<GameBoard> {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: rowLength),
           itemBuilder: (context, index) => Center(
-                child: Text(
-                  index.toString(),
-                  style: TextStyle(color: Color.fromARGB(255, 143, 14, 93)),
-                ),
+                child: Pixels(color: Colors.grey[900], child: index)
               )),
     );
   }
