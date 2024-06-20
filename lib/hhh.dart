@@ -5,6 +5,8 @@ class hhh extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      backgroundColor: Colors.amber,
+    );
   }
 }
