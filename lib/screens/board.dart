@@ -1,5 +1,7 @@
 
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:tetris/screens/piece.dart';
 import 'package:tetris/screens/pixels.dart';
@@ -25,28 +27,42 @@ class _GameBoardState extends State<GameBoard> {
     super.initState();
     startGame();
   }
-  void startGame(){
+
+  void startGame() {
     currentPiece.initializedPiece();
+
+    // //frame referesh rate
+    Duration frameRate = const Duration(milliseconds: 800);
+    gameLoop(frameRate);
   }
+  //game loop
+  void gameLoop(Duration frameRate){
+    Timer.periodic(frameRate, (timer) { 
+      setState(() {
+        //move current piece down
+        currentPiece.movePiece(Direction.down);
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: GridView.builder(
-        itemCount: rowLength * colLength,
-        physics:const NeverScrollableScrollPhysics(),
+          itemCount: rowLength * colLength,
+          physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: rowLength),
           itemBuilder: (context, index) {
             // return Pixels(color: Colors.grey[900], child: index);
-            if(currentPiece.position.contains(index)){
+            if (currentPiece.position.contains(index)) {
               return Pixels(color: Colors.yellow, child: index);
-              
-            }else{
-              return Pixels(color: Colors.grey[900], child: index) ;
+            } else {
+              return Pixels(color: Colors.grey[900], child: index);
             }
           }
           // Pixels(color: Colors.grey[900], child: index)
-          
+
           ),
     );
   }

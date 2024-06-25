@@ -10,7 +10,7 @@ class Pixels extends StatelessWidget {
     return  Container(
       decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(4)),
       margin: const EdgeInsets.all(1),
-      child: Center(child: Text(child.toString(),style: TextStyle(color: Colors.white),),),
+      child: Center(child: Text(child.toString(),style: const TextStyle(color: Colors.white),),),
     );
   }
 }
