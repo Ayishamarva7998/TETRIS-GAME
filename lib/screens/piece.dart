@@ -1,5 +1,8 @@
 
 
+import 'dart:ffi';
+
+import 'package:flutter/services.dart';
 import 'package:tetris/screens/values.dart';
 
 class piece{
@@ -26,5 +29,17 @@ class piece{
     }
   }
   
- 
+ //move piece
+  void movePiece(Direction direction){
+    switch (direction){
+      case Direction.down:
+       for (int i=0; i<position.length;i++){
+     
+        break;
+       }
+
+      break;
+      default:
+    }
+  }
 }

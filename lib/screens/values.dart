@@ -1,3 +1,9 @@
+enum Direction{
+  left,
+  right,
+  down
+}
+
 enum Tetris {
   L,
   J,
