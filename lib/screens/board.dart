@@ -34,6 +34,7 @@ class _GameBoardState extends State<GameBoard> {
     // //frame referesh rate
     Duration frameRate = const Duration(milliseconds: 800);
     gameLoop(frameRate);
+    
   }
   //game loop
   void gameLoop(Duration frameRate){
