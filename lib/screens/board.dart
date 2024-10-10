@@ -41,7 +41,7 @@ class _GameBoardState extends State<GameBoard> {
     Timer.periodic(frameRate, (timer) { 
       setState(() {
         //move current piece down
-        currentPiece.movePiece(Direction.down);
+        currentPiece.movePiece(Direction.down); 
       });
     });
   }
